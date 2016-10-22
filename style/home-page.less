@@ -1,3 +1,7 @@
+@transition: all;
+@time: .1s;
+@style: ease;
+
 .uppercase {
   font-style: uppercase;
 }
@@ -9,11 +13,13 @@
 .outer-wrapper{
   padding: 0 5px;
   .title-section{
-    display: flex;
-    h1{
-      color: #000000;
-      text-align: left;
+    h1, h2{
+      color: @dark-font;
+      text-align: center;
       padding: 0 5px;
+      @media(@sm){
+        color: @primary-color;
+      }
     }
   }
   .col-sm-7,
@@ -31,13 +37,18 @@
       margin-bottom: 16px;
     }
     .inside{
+      .inner-shadow (0, 0, 0, 0, 0);
+      @media screen and (min-width: @screen-sm-min){
+        .inner-shadow (0, 0, 100px, 35px, 0.5);
+      }
+      .transition(@transition, @time, @style);
+      .border(#000000, 2px);
       height: 300px;
-      border: solid 2px #000000;
       .timestamp{
         position: relative;
         top: -1px;
         left: -1px;
-        background-color: white;
+        background-color: rgba(191, 57, 53, 0.3);
         color: black;
         text-transform: uppercase;
         font-style: italic;
@@ -45,22 +56,84 @@
         border: solid 1px #000000;
         padding: 5px 10px;
         font-weight: bold;
-      }
-      .speech{
-        background-color: pink;
-        height: 32px;
-        line-height: 32px;
-        color: #000;
-        position: relative;
-        top: 5px;
-        display: inline-block;
-        border-radius: 50%;
-        border: solid 1px #000000;
-        padding: 0% 4% 4%;
-        &.one{
-          top: 10%;
         }
+        .speech{
+          .border-radius(50%);
+          .transition (@transition, @time, @style);
+          background-color: #ffffff;
+          height: 32px;
+          line-height: 32px;
+          color: rgba(26, 77, 163, 1.0);
+          position: absolute;
+          float: right;
+          display: inline-block;
+          border: solid 1px #000000;
+          padding: 0% 4% 4%;
+          &.one{
+            top: 10px;
+            right: 10px;
+            opacity: 1;
+          }
+          &.two{
+            top: 60px;
+            right: 40px;
+            opacity: 1;
+          }
+          &.three{
+            top: 110px;
+            right: 20px;
+            opacity: 1;
+          }
+          &.four{
+            top: 160px;
+            right: 50px;
+            opacity: 1;
+          }
+        }
+      @media screen and (min-width: @screen-md-min) {
+        .speech{
+          .border-radius(50%);
+          .transition (@transition, @time, @style);
+          background-color: #ffffff;
+          height: 32px;
+          line-height: 32px;
+          color: rgba(26, 77, 163, 1.0);
+          position: absolute;
+          float: right;
+          display: inline-block;
+          border: solid 1px #000000;
+          padding: 0% 4% 4%;
+          top: 0;
+          right: 0;
+          opacity: 0;
+        } 
       }
+      &:hover{ 
+        .border(#000000, 5px);
+        .inner-shadow (0, 0, 0, 0, 0);
+        .speech{
+          &.one{
+            top: 10px;
+            right: 10px;
+            opacity: 1;
+          }
+          &.two{
+            top: 60px;
+            right: 40px;
+            opacity: 1;
+          }
+          &.three{
+            top: 110px;
+            right: 20px;
+            opacity: 1;
+          }
+          &.four{
+            top: 160px;
+            right: 50px;
+            opacity: 1;
+          }
+        }       
+      }      
     }
   }
 }   
