@@ -1,6 +1,8 @@
 @import "variables.less";
 @import "mixins.less";
 @import "home-page.less";
+@import "about.less";
+@import "contact.less";
 
 @mobile-square-height:  150px;
 @square-height:         300px;
@@ -44,7 +46,6 @@ h4{
 
 .main-wrapper{
   color: #000000;
-  margin-top: 32px;
 }
 
 .landing-page{
@@ -86,7 +87,7 @@ h4{
 // ------------------------------------------------------
 .sub-page{
   h1{
-    margin-top: @padding-base-vertical*8;
+    margin-top: @padding-base-vertical;
   }
   &.education{
     h3, h4{
@@ -197,7 +198,7 @@ h4{
   text-align: center;
   color: #000000;
   background-color: white;
-  padding-bottom: @footer-height+20;
+  padding-bottom: @padding-base-vertical;
   @media (min-width: @screen-md-min) {
     margin-top: 0;
   }

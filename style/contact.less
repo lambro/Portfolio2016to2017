@@ -1,0 +1,43 @@
+.contact-form{
+  padding-top: @padding-base-vertical*3;
+  hr{
+    border-top: 2px solid @blue-accent;
+  }
+}
+
+.contact-image {
+  padding-top: 500px;
+  .border(#000000, 2px);
+  .background-image("http://image.noelshack.com/fichiers/2015/41/1444405281-monster-43370.jpg")
+}
+
+.contact-icon{
+  width: 80px;
+  height: 80px;
+  margin: @padding-base-vertical*3 auto;
+  padding-top: 18px;
+  .border(#000000, 2px);
+  .border-radius (50%);
+  background-color: transparent;
+  .transition(all);
+  color: @dark-font;
+  text-align: center;
+  &:hover{
+    &.github{
+      background-color: @blue-accent;
+      color: @background-color;
+    }
+    &.linkedin{
+      background-color: @orange-accent;
+      color: @background-color;
+    }
+    &.twitter{
+      background-color: @pink-accent;
+      color: @background-color;      
+    }
+  }
+}
+
+#sendanemail {
+  padding: 0 0 0 @padding-base-horizontal;
+}
