@@ -1,0 +1,46 @@
+.about.row{
+  hr{
+    border-top: 2px solid @orange-accent;
+  }
+  .introduction-wrap, .skills-wrap, .education-wrap{
+    margin-top: @padding-base-vertical*2;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .introduction-wrap{
+    .background-image("/images/champloo-eyes.jpg");
+  }
+  .skills-wrap{
+    .background-image("/images/gun-eyes.jpg");
+    background-position: 50% 30%;
+  }
+  .education-wrap{
+    .background-image("/images/scared-eyes.jpg");
+    background-position: 50% 15%;
+  }
+  h4{
+    margin: 0;
+    padding: @padding-base-vertical*8 @padding-base-horizontal*2;
+    .border(#000000, 2px);
+    @media(@sm){
+    background-color: rgba(0, 0, 0, 0.5);
+    }
+    font-size: @font-size-base+20;
+    color: @background-color;
+    -webkit-text-shadow: 0 0 3px #000000;
+    .transition (background-color);
+    &.intro{
+      text-align: right;
+    }    &.skills{
+      text-align: left;
+    }    &.edu{
+      text-align: right;
+    }
+    &:hover{
+      background-color: rgba(0, 0, 0, 0.0);
+    }
+  }
+  .wrappers{
+    margin-bottom: @footer-height;
+  }
+}

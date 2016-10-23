@@ -1,12 +1,23 @@
 // set colors
-@primary-color: red;
-@dark-font: #000000;
+@primary-color: #343D3A;
+@dark-font: #343D3A;
+@pink-accent: #FD2E58;
+@orange-accent: #EFA93A;
+@blue-accent: #5FD0D4;
+@background-color: #F1E7DE;
 
 @xxs: ~'min-width: 320px';
 @xs:  ~'min-width: @{screen-xs-min}';
 @sm:  ~'min-width: @{screen-sm-min}';
 @md:  ~'min-width: @{screen-md-min}';
 @lg:  ~'min-width: @{screen-lg-min}';
+
+.background-image(@url){
+  background-image: url(@url);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 .text-shadow (@string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
   text-shadow: @string;
@@ -89,7 +100,7 @@
   -ms-animation:     @name @duration @delay @ease;
 }
 
-.transition (@transition, @time, @style) {
+.transition (@transition, @time: 0.2s, @style: ease) {
   -webkit-transition: @transition @time @style;  
   -moz-transition:    @transition @time @style;
   -ms-transition:     @transition @time @style; 

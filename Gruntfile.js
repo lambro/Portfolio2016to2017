@@ -249,7 +249,7 @@ module.exports = function ( grunt ) {
       },
 
       html: {
-        files: [ 'index.html' ],
+        files: [ 'index.html'],
         tasks: ['less'],
       },
 

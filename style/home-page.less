@@ -38,7 +38,7 @@
     }
     .inside{
       .inner-shadow (0, 0, 0, 0, 0);
-      @media screen and (min-width: @screen-sm-min){
+      @media(@sm){
         .inner-shadow (0, 0, 100px, 35px, 0.5);
       }
       .transition(@transition, @time, @style);
@@ -90,7 +90,7 @@
             opacity: 1;
           }
         }
-      @media screen and (min-width: @screen-md-min) {
+      @media(@md){
         .speech{
           .border-radius(50%);
           .transition (@transition, @time, @style);
