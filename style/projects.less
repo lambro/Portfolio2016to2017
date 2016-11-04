@@ -1,0 +1,110 @@
+@font-size: 18px;
+@line-height: 1.7;
+@lines-to-show: 5;
+
+.projects.sub-page{
+  margin-bottom: @footer-height*2;
+  hr{
+    border-top: 2px solid @pink-accent;
+  }
+  h2 {
+    font-size: @font-size-base*3;
+    font-family: @sans-serif;
+    @media(@sm){
+      margin: @padding-base-vertical*4 auto;
+    }
+  }
+  .project-card{
+    margin-bottom: @padding-base-vertical*2;
+    @media(@sm){
+      height: 440px;
+      &.ga{
+      height: 600px;
+      }
+    }
+    &.video{
+      background-color: rgba(52, 61, 58, 0.1);
+    }
+    @media(@sm){    
+      &:hover{
+      .top{
+        .transition(@transition, @time, @style);
+        height: 0%;
+      }
+      .bottom{
+        .transition(@transition, @time, @style);
+        height: 100%;        
+      }
+    }}
+    .top{
+      .background-image("http://image.noelshack.com/fichiers/2015/41/1444405281-monster-43370.jpg");
+      .transition(@transition, @time, @style);
+      height: 48%;
+    }
+    .bottom{
+      .transition(@transition, @time, @style);
+      height: 70%;
+      overflow: hidden;
+      display: block; /* Fallback for non-webkit */
+      display: -webkit-box;
+      margin: 0 auto;
+      font-size: @font-size;
+      line-height: @line-height;
+      -webkit-line-clamp: @lines-to-show;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      background-color: @orange-accent;
+      &.fuse{
+        background-color: @orange-accent;
+      }
+      &.Ford{
+        background-color: @blue-accent;
+      }
+      &.PMI{
+        background-color: @pink-accent;
+      }
+      &.Tic{
+        background-color: @blue-accent;
+      }
+      &.Feed{
+        background-color: @orange-accent;
+      }
+      &.LP{
+        background-color: @pink-accent;
+      }
+      color: #ffffff;
+      p{      
+        font-family: @serif;
+      }
+      h3{
+        font-size: 32px;
+      }
+      &:hover{
+      -webkit-line-clamp: 11;
+      }
+    }
+    &.ga .bottom{
+      -webkit-line-clamp: 8;
+      &:hover{
+        -webkit-line-clamp: 11;
+      }
+    }
+    @media(@sm){
+      .bottom{
+        height: 52%;
+      }
+    }
+  }
+}
+
+.walkthrough-video{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.project-card:not(.fuse) {
+    opacity:0;
+}

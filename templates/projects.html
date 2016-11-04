@@ -1,73 +1,51 @@
 <div class="projects sub-page row">
   <h1 class="text-center">Projects</h1>
+  <div class="line col-md-10 col-md-offset-1"><hr></div>
+<!-- change fonts -->
+  <div class="col-md-10 col-md-offset-1" ng-controller="formPageController">
+    <div ng-repeat="project in workprojects">
+      <div class="hidden-xs">
+        <div ng-class-odd="'col-sm-5 project-card {{project.class}}'" ng-class-even="'col-sm-5 project-card pull-right {{project.class}}'">
+          <div class="top hidden-xs" style="background-image: url({{project.image}}); ">
+          </div>
+          <div class="bottom {{project.class}}">
+              <h3>{{project.name}}</h3>
+              <p>{{project.description}}</p>
+          </div>
+        </div>
 
-  <div class="col-md-12 proj2">
-      <div class="col-md-6 col-md-offset-3 project">   
-      <h3>The Ford Foundation</h3>
-      <p>
-      A re-build of the <a href="http://www.fordfoundation.org/">Ford Foundation</a> custom responsive main site. I worked on front end engineering on the site which was built in Umbraco. As well as the main site sections I also worked heavily on the <a href="http://www.fordfoundation.org/work/our-grants/grants-database/">'Grants Database'</a> section of the site (work > grants database) which was built in Angular, including the graph visuals using data from the Ford Foundation api, filter, search and sort functionality.
-      </p>
-      <a href="http://www.fordfoundation.org/">
-        <img class="img-responsive center-block" src="../images/fordfoundation.png" alt="thumbnail of the Ford Foundation site this image links to the page">
-      </a>
-      </div>
-
-      <div class="col-md-6 col-md-offset-3 project">   
-      <h3>"Tic Tac Trill"</h3>
-      <p>
-      My first project on General Assembly's Web Development Immersive course. This was my first real work with Ruby and Ruby on Rails. We had a week to complete it. The project was my chance to work on using Ruby logic which at the time I had chosen because I wanted to challenge myself. This site includes a carrierwave image uploader however Heroku has removed my photos for now.I am going to add AWS to it so you can see it in all its 'Trill' glory soon!
-      I used Github and Trello for version management and organisation.</p>
-      <a href="https://tic-tac-trill.herokuapp.com/">
-        <img class="img-responsive center-block" src="../images/tictactrill.png" alt="thumbnail of tic tac trill project links to project">
-      </a>
-      </div>
-
-      <div class="col-md-6 col-md-offset-3 project">
-        <h3>"Feed.me"</h3>
-        <p>
-          "Feed.me" was the second project on General Assembly's Web Development Immersive Course. We were tasked with making a site that displayed RSS feeds in pairs
-          We used Github and Trello for version management and organisation.
-          I designed all the Front End and we also divided the Back End together.
-        </p>
-
-      <a href="http://infinite-wave-4812.herokuapp.com/">
-        <img class="img-responsive center-block" src="../images/feedme.png" alt="thumbnail of feed.me project links to project">
-      </a>
-      </div>
-
-      <div class="col-md-6 col-md-offset-3 project">
-        <h3>"Let's Play"</h3>
-        <p>
-          This was my final project on General Assembly's three month Web Development Course. It was open topic. I chose to make a site to organise social gaming sessions with friends and other gamers with a name inspired by my fascination with watching other people play games. We had two weeks to complete it, and I had a really ambitious project with a large number of tables and interactions. This project was written in Ruby on Rails with AngularJs, which we had only studied for a week, and a Rails Engine, which we had never used before at all, so there are some issues I am still ironing out. It is still a great learning experience that I am working on.
-        </p>
-      <a href="https://weplaygames.herokuapp.com/letsplay/home">
-        <img class="img-responsive center-block" src="../images/letsplay.png" alt="thumbnail of lets play project links to project">
-      </a>
-      </div>
-</div>
-<div class="col-md-12 proj2">
-    <h1>Small Angular Projects</h1>
-    <div class="col-md-12">
-      <div class="col-md-4 col-md-offset-2">
-        <h3>Hackathon Silliness</h3>
-        <p>For our 48hour hackathon, I had a few ideas but realised I was taking it all a little too seriously.. Around 9pm the night before I just decided to run with the with the silliest of them. In theory there was a great way to take the answers recieved and use them as keywords in a search for a 'random video' to cure your current boredom and waste a little bit of time, however in practice your answers will lead you to <a href="https://youtu.be/TV6vQYZDfAs">the only video you will ever need to see</a>.</p>
-      </div>
-
-      <div class="col-md-4 pic">
-        <a href="http://laura-the.ninja/hackathon/index.html">
-          <img class="col-md-12 img-responsive center-block" src="images/hackathon.png" alt="thumbnail of hackathon project links to project">
-        </a>
+      <div ng-class-odd="'col-sm-7'" ng-class-even="'col-sm-7 project-card pull-left'">
+        <div class="project-card video hidden-xs" poster={{project.image}}>
+          <video class="walkthrough-video" width="100%" controls>
+            <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4">
+            <source src="http://techslides.com/demos/sample-videos/small.ogv" type="video/ogg">
+            Your browser does not support the HTML5 video tag.
+          </video>
+        </div>
       </div>
     </div>
+      <div class="col-xs-12 visible-xs project-card {{project.class}}">
+        <h3>{{project.name}}</h3>
+        <p>{{project.description}}</p>
+      </div>
+    </div> 
+    <!-- end of ng repeat -->
+  </div>
+  
+  <h2>General Assembly Projects</h2>
 
-    <div class="col-md-12">
-      <div class="col-md-4 col-md-offset-2">
-        <h3>Class Yearbook</h3>
-        <p>We were each asked to create a class yearbook. It was an homage to the classic beat-em-up, made as a few days as Angular practice.</p>
+  <div class="col-md-10 col-md-offset-1" ng-controller="formPageController">
+      <div ng-repeat="project in gaprojects" class="col-sm-4 ga project-card">
+      <div class="top hidden-xs" style="background-image: url({{project.image}}); ">
       </div>
-      <div class="col-md-4 pic">            
-          <img class="col-md-12 img-responsive center-block" src="images/yearbook.png" alt="thumbnail of yearbook project links to project">
+      <div class="bottom hidden-xs {{project.class}}">
+          <h3>{{project.name}}</h3>
+          <p>{{project.description}}</p>
       </div>
-    </div>
+      <div class="col-xs-12 visible-xs project-card {{project.class}}">
+        <h3>{{project.name}}</h3>
+        <p>{{project.description}}</p>
+      </div>
+      </div>
   </div>
 </div>

@@ -1,0 +1,103 @@
+.introduction.sub-page{
+  &:last-child{
+    margin-bottom: @footer-height * 2;
+  }
+  &:first-child {
+    min-height: 175px;
+  }
+  &:nth-child(3){
+    min-height: 200px;
+  }
+  .tldr {
+    text-align: right;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    @media(@sm) {
+      border-right: solid 1px @dark-font;
+      padding: 4px;
+      height:200px;
+      &:hover {
+        .border(@blue-accent, 5px);
+        padding: 0;
+      }
+    }
+    .transition(@transition, @time, @style);
+    .border(@dark-font, 2px);
+    border-bottom: solid 1px @dark-font;
+    p {
+      padding-top: 12px;
+    }
+  }
+  .skill-list {
+    height: 100%;
+    .border(@dark-font, 2px);
+    border-left: solid 1px @dark-font;
+    border-bottom: solid 1px @dark-font;
+    border-top: solid 1px @dark-font;
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    @media(@sm) {
+      height:200px;
+    }
+    @media(@sm){
+      border-top: solid 2px @dark-font;
+      padding: 3px;
+      &:hover {
+        .border(@orange-accent, 5px);
+        padding: 0;
+      }
+    }
+    li {
+      text-align: center;
+    }
+  }
+  .i-am{
+    .border(@dark-font, 2px);
+    border-top: solid 1px @dark-font;
+    border-bottom: solid 1px @dark-font;
+  }
+  .intro-image{
+    min-height: 200px;
+    .border(@dark-font, 2px);
+    border-top: solid 1px @dark-font;
+    .background-image("/images/claymore.jpg");
+    .transition(@transition, @time, @style);
+    border-right: solid 1px @dark-font;
+    @media(@sm) {
+      padding: 4px;
+      &:hover{
+        .border(@orange-accent, 5px);
+        padding: 0;
+      }
+      height:345px;
+    }
+  }
+  .intro-text{
+    height: 100%;
+    .border(@dark-font, 2px);
+    border-top: solid 1px @dark-font;
+    .transition(@transition, @time, @style);
+    border-left: solid 1px @dark-font;
+    @media(@sm) {
+      height:345px;
+      padding: 4px;
+      &:hover{
+        .border(@pink-accent, 5px);
+        padding: 0;
+      }
+    }
+    p {
+      margin-top: 20px;
+    }
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.i-am-laura{
+  font-size: @font-size-base * 3;
+}

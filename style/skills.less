@@ -1,0 +1,97 @@
+.skills.sub-page{
+  margin-bottom: @footer-height * 2;
+}
+
+.bar{
+  text-align: left;
+  height:60px;
+  background:rgba(90, 90, 90, 0.5);
+  vertical-align: center;
+  padding:0.6%;
+  margin-top: @padding-base-vertical*2;
+  color:#ffffff;
+  padding-top: 7px;
+  .transition(@transition, @time, @style);
+  &:last-child{
+    margin-bottom: @padding-base-vertical+10;
+  }
+}
+
+.inner{
+  line-height: 45px;
+  height:45px;
+  background-color:#000000;
+  display:inline-block;
+  font-size: 1.5em;
+  padding-left: @padding-base-horizontal;
+  color:white;
+  -webkit-transition: color .3s ease;
+  -moz-transition: color .3s ease;
+  transition: color .3s ease;
+  &#html{
+    width:86%;
+    -webkit-transition: width .3s ease;
+    -moz-transition: width .3s ease;
+    transition: width .3s ease;
+    @media (min-width: @screen-md-min) {
+      &:hover{
+        width:91%;
+      }
+    }
+  }
+  &#css{  
+    width:85%;
+    -webkit-transition: width .3s ease;
+    transition: width .3s ease;
+      -moz-transition: width .3s ease;
+      @media (min-width: @screen-md-min) {
+        &:hover{
+          width:90%;
+        }
+      }
+  }
+  &#ror{
+    width:55%;
+  -webkit-transition: width .3s ease;
+  transition: width .3s ease;
+      -moz-transition: width .3s ease;
+      @media (min-width: @screen-md-min) {
+        &:hover{
+          width:60%;
+        }
+      }
+  }
+  &#javaScript{
+    width:60%;
+  -webkit-transition: width .3s ease;
+  transition: width .3s ease;
+      -moz-transition: width .3s ease;
+      @media (min-width: @screen-md-min) {
+        &:hover{
+          width:65%;
+        }
+      }
+  }
+  &#jquery{  
+    width:75%;
+  -webkit-transition: width .3s ease;
+  transition: width .3s ease;
+      -moz-transition: width .3s ease;
+      @media (min-width: @screen-md-min) {
+        &:hover{
+          width:80%;
+        }
+      }
+  }
+  &#angularJs{
+  width:70%;
+  -webkit-transition: width .3s ease;
+  transition: width .3s ease;
+      -moz-transition: width .3s ease;
+      @media (min-width: @screen-md-min) {
+        &:hover{
+          width:75%;
+        }
+      }
+  }
+}

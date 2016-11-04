@@ -10,37 +10,37 @@ app.config(function($routeProvider, $locationProvider){
   // $locationProvider.html5Mode(true);
 
   $routeProvider.when('/about',{
-    controller: 'FormPageController',
+    controller: 'formPageController',
     templateUrl: './templates/about.html'
   });
 
   $routeProvider.when('/skills',{
-    controller: 'FormPageController',
+    controller: 'formPageController',
     templateUrl: './templates/skills.html'
   });
 
   $routeProvider.when('/introduction/',{
-    controller: 'FormPageController',
+    controller: 'formPageController',
     templateUrl: './templates/introduction.html',
   });
 
   $routeProvider.when('/experience',{
-    controller: 'FormPageController',
+    controller: 'formPageController',
     templateUrl: './templates/experience.html'
   });
 
   $routeProvider.when('/education',{
-    controller: 'FormPageController',
+    controller: 'formPageController',
     templateUrl: './templates/education.html'
   });  
 
   $routeProvider.when('/projects',{
-    controller: 'FormPageController',
+    controller: 'formPageController',
     templateUrl: './templates/projects.html'
   });  
 
   $routeProvider.when('/contactform',{
-    controller: 'FormPageController',
+    controller: 'formPageController',
     templateUrl: './templates/contactform.html'
   });
 });
