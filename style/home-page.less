@@ -7,7 +7,7 @@
 }
 
 .outer-wrapper{
-  padding: 0 5px;
+  padding: 0 5px @footer-height;
   .title-section{
     h1, h2 {
       color: @dark-font;
@@ -21,7 +21,9 @@
     h1 {
       font-family: @sans-serif;
       font-weight: @regular;
-      font-size: 46px;
+      @media(sm){
+        font-size: 46px;
+      }
     }
     h2 {
       font-family: @serif;
@@ -29,18 +31,33 @@
     }
   }
   .col-sm-4{
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: @padding-base-vertical * 2;
+    padding-right: @padding-base-vertical * 2;
   }
   .row{
-    margin-bottom: 16px;
+    margin-bottom: @padding-base-vertical;
     .box{
-      margin-bottom: 16px;
+      margin-bottom: @padding-base-vertical;
     }
     .inside{
       .transition(@transition, @time, @style);
       .border(#000000, 2px);
-      height: 300px;
+      height: 150px;
+      @media(@sm){
+        height: 250px;
+        margin-bottom: @padding-base-vertical * 2;
+      }
+      @media(@md){
+        height: 450px;
+      }
+      @media(@lg){
+        height: 500px;
+      }
+      @media screen {
+        @media (min-width: 1600px) {
+          height: 700px;
+        }
+      }
       .timestamp{
         .border(#000000, 1px);
         background-color: #FFFFFF;
@@ -52,8 +69,9 @@
         text-transform: uppercase;
         font-style: italic;
         display: inline-block;
-        padding: 5px 10px;
+        padding: @padding-base-vertical @padding-base-horizontal;
         font-weight: bold;
+
       }
     }
   }
@@ -64,22 +82,26 @@
     .background-image("/images/claymore.jpg");
     &:hover {
       // .background-image("/images/champloo-eyes.jpg");
-      .border(@blue-accent, 5px);
+      .border(@baby-blue-accent, 5px);
     }
   }
   .main-projects{
     .background-image("/images/theresa3.png");
     &:hover {
       // .background-image("/images/champloo-eyes.jpg");
-      .border(@pink-accent, 5px);
+      .border(@light-pink, 5px);
     }
   }
   .main-contact{
     .background-image("/images/theresa2.png");
     &:hover {
       // .background-image("/images/champloo-eyes.jpg");
-      .border(@orange-accent, 5px);
+      .border(@yellow, 5px);
     }
   }
 }
 
+.tiny{
+  font-size: 60%;
+  text-align: center;
+}

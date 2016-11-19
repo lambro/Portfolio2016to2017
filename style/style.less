@@ -7,7 +7,7 @@
 @import "projects.less";
 @import "footer.less";
 @import "skills.less";
-
+@import "education.less";
 
 body{
   background-color: #ffffff;
@@ -22,9 +22,17 @@ h3{
   font-family: @sans-serif;
 }
 
+h1, h2, h4 {
+  font-family: @sans-serif;
+}
+
+p {
+  font-family: @sans-serif;
+}
+
 .sub-page{
   .line{
-    padding: 0 @padding-large-horizontal;
+    padding: 0 @padding-base-horizontal / 2;
     hr{
       margin-top: @padding-large-horizontal;
       margin-bottom: @padding-large-horizontal;
@@ -83,19 +91,6 @@ h4{
 .home-menu-section {
   a{
     color: white;
-  }
-}
-
-// ------------------------------------------------------
-// #### Navigation section ####
-// ------------------------------------------------------
-
-.top-nav{
-  div:last-child{
-    padding-top: 3px;
-    a{
-      font-size: @font-size-base*1.5;
-    }
   }
 }
 
@@ -161,25 +156,13 @@ h4{
     background-position: -50% 40%;
     background-repeat: no-repeat;
   }
-  .mini-nav{
-    margin: (@padding-base-vertical*2) auto;
-    .contact{
-      font-size: 10px;
-    }
-    i{
-      font-size: @font-size-base*1.5;
-      @media (min-width: @screen-md-min) {
-        font-size: @font-size-base;
-      }
-    }
-  }
   overflow: hidden;
 }
 
 .introduction, .about, .experience, .skills, .education, .projects, .contactform{
   text-align: center;
   color: @dark-font;
-  background-color: white;
+  background-color: #ffffff;
   @media(@md) {
     margin-top: 0;
   }
@@ -187,14 +170,14 @@ h4{
     padding: 2%;
   }
   p {
-    padding: @padding-base-vertical @padding-base-horizontal;
+    padding: @padding-base-vertical @padding-base-horizontal+1;
     .text-center;
+  }
+  .tldr p {
+    padding: @padding-base-vertical @padding-base-horizontal;
   }
 }
 
-.tech{
-  margin-bottom: @padding-base-vertical;
-}
 
 //moving bars
 
@@ -275,4 +258,25 @@ h4{
 .blink {
   animation: blink 1s step-start 0s infinite;
   -webkit-animation: blink 1s step-start 0s infinite;
+}
+
+.navigation.row{
+  margin-bottom: @footer-height + 10;
+}
+
+.angularfade.ng-hide {
+  opacity: 0;
+}
+
+.angularfade.ng-hide-remove,
+.angularfade.ng-hide-add {
+  display: inline-block !important;
+}
+
+.angularfade.ng-hide-remove {
+  transition: all linear 200ms;
+}
+
+.angularfade.ng-hide-add {
+  transition: all linear 200ms;
 }

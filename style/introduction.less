@@ -1,9 +1,6 @@
 .introduction.sub-page{
   &:last-child{
-    margin-bottom: @footer-height * 2;
-  }
-  &:first-child {
-    min-height: 175px;
+    margin-bottom: @padding-base-vertical*2;
   }
   &:nth-child(3){
     min-height: 200px;
@@ -14,6 +11,9 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    strong {
+      color: @orange-accent;
+    }
     @media(@sm) {
       border-right: solid 1px @dark-font;
       padding: 4px;
@@ -39,6 +39,9 @@
     display: flex;
     justify-content: center;
     flex-direction: column; 
+    strong {
+      color: @blue-accent;
+    }
     @media(@sm) {
       height:200px;
     }
@@ -46,7 +49,7 @@
       border-top: solid 2px @dark-font;
       padding: 3px;
       &:hover {
-        .border(@orange-accent, 5px);
+        .border(@yellow, 5px);
         padding: 0;
       }
     }
@@ -56,8 +59,8 @@
   }
   .i-am{
     .border(@dark-font, 2px);
-    border-top: solid 1px @dark-font;
-    border-bottom: solid 1px @dark-font;
+    border-top: solid 2px @dark-font;
+    border-bottom: solid 0px @dark-font;
   }
   .intro-image{
     min-height: 200px;
@@ -72,7 +75,7 @@
         .border(@orange-accent, 5px);
         padding: 0;
       }
-      height:345px;
+      height:460px;
     }
   }
   .intro-text{
@@ -82,10 +85,10 @@
     .transition(@transition, @time, @style);
     border-left: solid 1px @dark-font;
     @media(@sm) {
-      height:345px;
+      height:460px;
       padding: 4px;
       &:hover{
-        .border(@pink-accent, 5px);
+        .border(@light-pink, 5px);
         padding: 0;
       }
     }
@@ -99,5 +102,9 @@
 }
 
 .i-am-laura{
+  font-size: @font-size-base * 2;
+  @media(@sm){
   font-size: @font-size-base * 3;
+  }
+  color: @dark-font;
 }

@@ -1,3 +1,3 @@
-app.controller('AppController', function($scope, $routeParams, $ngAnimate){
+app.controller('AppController', function($scope, $routeParams){
 
 });

@@ -1,6 +1,6 @@
 /**
- * portfolio20167 - v1.0.0 - 2016-11-01
- * https://github.com/minjin6/template-logins
+ * portfolio20167 - v1.0.0 - 2017-01-21
+ * http:laura-the.ninja
  *
- * Copyright (c) 2016 Lambro
+ * Copyright (c) 2017 Lambro
  */

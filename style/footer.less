@@ -12,14 +12,17 @@ footer{
   h2, h4 {
     color: #FFFFFF;
     padding: (@footer-height / 4) 0;
-    .no-margin;
     .text-center;
     font-size: @font-size-base*1.5;
     @media (min-width: @screen-md-min) {
       font-size: @font-size-base+2;
     }
   }
+  h2{
+    margin-top: -5px;
+  }
   h4 {
+    .no-margin;
     font-size: @font-size-base;
     @media (min-width: @screen-md-min) {
       font-size: @font-size-base;
