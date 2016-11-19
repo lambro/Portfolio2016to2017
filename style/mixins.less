@@ -11,6 +11,9 @@
   background-repeat: no-repeat;
 }
 
+.bg-transparent(@color, @alpha: 1) {
+  background-color: rgba( red(@color), green(@color), blue(@color), @alpha);
+}
 .text-shadow (@string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
   text-shadow: @string;
 }
@@ -20,11 +23,13 @@
   -moz-box-shadow:    @string;
   box-shadow:         @string;
 }
+
 .drop-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
   -webkit-box-shadow: @x @y @blur @spread rgba(0, 0, 0, @alpha);
   -moz-box-shadow:  @x @y @blur @spread rgba(0, 0, 0, @alpha);
   box-shadow:   @x @y @blur @spread rgba(0, 0, 0, @alpha);
 }
+
 .inner-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
   -webkit-box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
   -moz-box-shadow:    inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
@@ -85,7 +90,6 @@
   background: -ms-linear-gradient(top, @startColor, @endColor);
   background: -o-linear-gradient(top, @startColor, @endColor);
 }
-
 
 .animation (@name, @duration: 300ms, @delay: 0, @ease: ease) {
   -webkit-animation: @name @duration @delay @ease;

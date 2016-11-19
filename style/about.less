@@ -1,5 +1,4 @@
 .about.row.sub-page{
-  margin-bottom: @padding-base-vertical*4;
   .line{
     border-top: 2px solid @orange-accent;
     padding: 0;
@@ -7,17 +6,27 @@
       border: none;
     }
   }
-  .introduction-wrap, .skills-wrap, .education-wrap{
+  .introduction-wrap, .skills-wrap, .education-wrap, .nav1, .nav2{
     margin-top: @padding-base-vertical*2;
     padding-left: 0;
     padding-right: 0;
+  }
+  .introduction-wrap, .skills-wrap, .education-wrap{
+    .active{
+      h4{
+        font-size: @font-size-base+5;
+        @media(@sm){
+          font-size: @font-size-base+20;
+        }
+      }
+    }
   }
   .introduction-wrap{
     .background-image("/images/claymore.jpg");
     .active{
       h4{
-        color: @pink-accent;
-        background-color: rgba(255, 255, 255, 0.5);
+        color: #ffffff;
+        background-color: rgba(25, 165, 168, 0.9);
       }
     }
   }
@@ -25,44 +34,63 @@
     .background-image("/images/theresa2.png");
     .active{
       h4{
-        color: @orange-accent;
-        background-color: rgba(255, 255, 255, 0.5);
+        color: #ffffff;
+        background-color: rgba(233, 89, 120, 0.9);
       }
     }
   }
   .education-wrap{
-    margin-bottom: @footer-height;
     .background-image("/images/theresa3.png");
     .active{
       h4{
-        color: @blue-accent;
-        background-color: rgba(255, 255, 255, 0.5);
+        color: #ffffff;
+        background-color: rgba(147, 34, 127, 0.9);
       }
     }
   }
   h4{
     margin: 0;
+    color: @dark-font;
     padding: @padding-base-vertical*8 @padding-base-horizontal*2;
     .border(#000000, 2px);
     font-family: @sans-serif;
+    background-color: rgba(255, 255, 255, 0.6);
     font-weight: @bold;
+    font-size: @font-size-base+5;
     @media(@sm){
-      background-color: rgba(0, 0, 0, 0.5);
+      font-size: @font-size-base+20;
+      -webkit-text-shadow: 0 0 3px #000000;
+      .transition (background-color);
     }
-    font-size: @font-size-base+20;
-    color: #FFFFFF;
-    -webkit-text-shadow: 0 0 3px #000000;
-    .transition (background-color);
-    &.intro{
-      text-align: right;
-    }    &.skills{
-      text-align: left;
-    }    &.edu{
-      text-align: right;
+    @media(@md){
+      background-color: rgba(255, 255, 255, 0.8);
+      &:hover{
+        &.intro{background-color: rgba(25, 165, 168, 0.8);} //turquoise / blue-accent
+        &.skills-about{background-color: rgba(233, 89, 120, 0.8);} // pink
+        &.edu{background-color: rgba(147, 34, 127, 0.8);} // purple
+        color: #ffffff;
+      }
     }
-    &:hover{
-      background-color: rgba(255, 255, 255, 0.6);
-      color: @dark-font;
+  }
+  .nav1, .nav2{
+    h4{
+    padding: @padding-base-vertical*4 @padding-base-horizontal*2;
+      @media(@md){
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+      &:hover{
+        background-color: rgba(253, 46, 88, 0.8);
+        color: #ffffff;
+      }
+    }
+    margin-bottom: @footer-height*2;
+    .background-image("/images/theresa3.png");
+  }
+  .nav2{
+    h4 {
+      &:hover{
+        background-color: rgba(95, 208, 212, 0.8);
+      }
     }
   }
 }

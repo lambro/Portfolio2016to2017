@@ -6,29 +6,34 @@
 }
 
 .contact-image {
-  padding-top: 495px;
+  padding-top: 100px;
+  margin-bottom: @padding-base-vertical*2;
+  .background-image("/images/claymore.jpg");
+  @media(@xs){
+    padding-top: 495px;
+    .background-image("http://image.noelshack.com/fichiers/2015/41/1444405281-monster-43370.jpg");
+  }
   .border(#000000, 2px);
-  .background-image("http://image.noelshack.com/fichiers/2015/41/1444405281-monster-43370.jpg");
 }
 
 .contact-icon{
   width: 80px;
   height: 80px;
   margin: 0 auto @padding-base-vertical*3;
-  padding-top: 18px;
+  padding-top: @padding-base-vertical *2 ;
   .border(#000000, 2px);
   .border-radius (50%);
     &.github{
     background-color: @blue-accent;
-    color: @background-color;
+    color: #ffffff;
   }
   &.linkedin{
     background-color: @orange-accent;
-    color: @background-color;
+    color: #ffffff;
   }
   &.twitter{
     background-color: @pink-accent;
-    color: @background-color;      
+    color: #ffffff;      
   }
   @media(@sm){
     &.github{
@@ -50,24 +55,22 @@
   &:hover{
     &.github{
       background-color: @blue-accent;
-      color: @background-color;
+      color: #ffffff;
     }
     &.linkedin{
       background-color: @orange-accent;
-      color: @background-color;
+      color: #ffffff;
     }
     &.twitter{
       background-color: @pink-accent;
-      color: @background-color;      
+      color: #ffffff;      
     }
   }
 }
 
 #sendanemail {
-  padding: 0 0 0 @padding-base-horizontal;
+  @media(@sm){
+    padding: 0 0 0 @padding-base-horizontal;
+  }
   text-align: center;
-}
-
-#contact {
-  margin-bottom: @footer-height * 2;
 }

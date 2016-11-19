@@ -2,50 +2,74 @@
   <h1 class="text-center">Projects</h1>
   <div class="line col-md-10 col-md-offset-1"><hr></div>
 <!-- change fonts -->
-  <div class="col-md-10 col-md-offset-1" ng-controller="formPageController">
-    <div ng-repeat="project in workprojects">
-      <div class="hidden-xs">
-        <div ng-class-odd="'col-sm-5 project-card {{project.class}}'" ng-class-even="'col-sm-5 project-card pull-right {{project.class}}'">
-          <div class="top hidden-xs" style="background-image: url({{project.image}}); ">
+  <div class="col-md-10 col-md-offset-1" ng-controller="projectsController">
+      <!-- desktop -->
+      <div ng-repeat="project in workprojects">
+        <div class="hidden-xs" data-equal="project-row">
+          <div ng-class-odd="'col-sm-5 project-card border left match-height-{{project.class}} {{project.class}}'" ng-class-even="'right col-sm-5 project-card pull-right match-height-{{project.class}} {{project.class}} border'">
+            <div class="bottom {{project.class}}">
+                <a href="{{project.link}}">
+                  <div class="col-xs-12 project-logo {{project.class}}">
+                  </div>
+                </a>
+                <p>{{project.description}}</p>
+            </div>
           </div>
-          <div class="bottom {{project.class}}">
-              <h3>{{project.name}}</h3>
-              <p>{{project.description}}</p>
-          </div>
-        </div>
 
-      <div ng-class-odd="'col-sm-7'" ng-class-even="'col-sm-7 project-card pull-left'">
-        <div class="project-card video hidden-xs" poster={{project.image}}>
-          <video class="walkthrough-video" width="100%" controls>
-            <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4">
-            <source src="http://techslides.com/demos/sample-videos/small.ogv" type="video/ogg">
-            Your browser does not support the HTML5 video tag.
-          </video>
+        <div ng-class-odd="'col-sm-7 border right match-height-{{project.class}} {{project.class}}'" ng-class-even="'col-sm-7 match-height-{{project.class}} project-card left pull-left border'">
+            <div class="match-height-{{project.class}} screengrab" style="background-image: url({{project.screenshot}});" ></div>
+          </div>
         </div>
-      </div>
-    </div>
+    <!-- mobile view -->
+      <a href="{{project.link}}">
+        <div class="col-xs-12 visible-xs project-logo {{project.class}}">
+        </div>
+      </a>
       <div class="col-xs-12 visible-xs project-card {{project.class}}">
         <h3>{{project.name}}</h3>
         <p>{{project.description}}</p>
+        <div class="line"></div>
+      </div>
       </div>
     </div> 
     <!-- end of ng repeat -->
-  </div>
-  
-  <h2>General Assembly Projects</h2>
 
-  <div class="col-md-10 col-md-offset-1" ng-controller="formPageController">
-      <div ng-repeat="project in gaprojects" class="col-sm-4 ga project-card">
-      <div class="top hidden-xs" style="background-image: url({{project.image}}); ">
-      </div>
+  <div class="col-xs-12 project-logo GA">
+  </div>
+  <div class="col-md-10 ga-projects col-md-offset-1" ng-controller="projectsController">
+    <div ng-repeat="project in gaprojects" class="col-sm-8 col-sm-offset-2 ga project-card">
+     <a href="{{project.link}}"><div class="top hidden-xs" style="background-image: url({{project.image}}); ">
+      </div></a> 
       <div class="bottom hidden-xs {{project.class}}">
           <h3>{{project.name}}</h3>
           <p>{{project.description}}</p>
+          <div class="line"></div>
       </div>
       <div class="col-xs-12 visible-xs project-card {{project.class}}">
+        <a href="{{project.link}}"><div class="top" style="background-image: url({{project.image}}); ">
+        </div></a>
         <h3>{{project.name}}</h3>
         <p>{{project.description}}</p>
+        <div class="line"></div>
       </div>
-      </div>
+    </div>
+  </div>
+</div>
+
+<div class="projects row sub-page">
+  <div class="col-xs-4 col-md-3 col-md-offset-1 nav1">
+      <a href="./#/about">
+        <h4 class="">about</h4>
+      </a>
+  </div>
+  <div class="col-xs-4 col-md-4 nav2">
+      <a href="./">
+        <h4 class="">home</h4>
+      </a>
+  </div>
+  <div class="col-xs-4 col-md-3 nav3">
+      <a href="./#/contactform">
+        <h4 class="">contact</h4>
+      </a>
   </div>
 </div>

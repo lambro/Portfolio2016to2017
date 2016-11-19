@@ -1,97 +1,282 @@
 .skills.sub-page{
-  margin-bottom: @footer-height * 2;
+  // margin-bottom: @footer-height * 2;
 }
 
-.bar{
-  text-align: left;
-  height:60px;
-  background:rgba(90, 90, 90, 0.5);
-  vertical-align: center;
-  padding:0.6%;
-  margin-top: @padding-base-vertical*2;
-  color:#ffffff;
-  padding-top: 7px;
-  .transition(@transition, @time, @style);
-  &:last-child{
-    margin-bottom: @padding-base-vertical+10;
-  }
-}
-
-.inner{
-  line-height: 45px;
-  height:45px;
-  background-color:#000000;
-  display:inline-block;
-  font-size: 1.5em;
-  padding-left: @padding-base-horizontal;
-  color:white;
-  -webkit-transition: color .3s ease;
-  -moz-transition: color .3s ease;
-  transition: color .3s ease;
-  &#html{
-    width:86%;
-    -webkit-transition: width .3s ease;
-    -moz-transition: width .3s ease;
-    transition: width .3s ease;
-    @media (min-width: @screen-md-min) {
-      &:hover{
-        width:91%;
-      }
+.skill-box{
+  height: 300px;
+  @media(@sm){
+    height: 500px;
+    &.javascript-skills, &.production-skills, &.backend-skills{
+      height: 265px;
     }
   }
-  &#css{  
-    width:85%;
-    -webkit-transition: width .3s ease;
-    transition: width .3s ease;
-      -moz-transition: width .3s ease;
-      @media (min-width: @screen-md-min) {
-        &:hover{
-          width:90%;
-        }
-      }
+  .border(#000000, 2px);
+  border-top: solid #000000 1px;
+  border-bottom: solid #000000 1px;
+}
+
+.skill-title{
+  padding-bottom: 10px;
+  @media(@sm){
+    &.javascript-title, &.production-title, &.backend-title {
+      height: 265px;
+    }
+    height: 500px;
+    padding-bottom: 0;
   }
-  &#ror{
-    width:55%;
-  -webkit-transition: width .3s ease;
-  transition: width .3s ease;
-      -moz-transition: width .3s ease;
-      @media (min-width: @screen-md-min) {
-        &:hover{
-          width:60%;
-        }
-      }
+  h2 {
+    margin: @padding-base-vertical*2 0;
   }
-  &#javaScript{
-    width:60%;
-  -webkit-transition: width .3s ease;
-  transition: width .3s ease;
-      -moz-transition: width .3s ease;
-      @media (min-width: @screen-md-min) {
-        &:hover{
-          width:65%;
-        }
-      }
+  .border(#000000, 2px);
+  border-top: solid #000000 1px;
+  border-bottom: solid #000000 1px;
+}
+
+.style-skills{
+  .background-image("/images/cmsg.jpg");
+}
+.javascript-skills{
+  .background-image("/images/tetsuo.jpg");
+}
+.production-skills{
+  .background-image("/images/mikasa.jpg");
+}
+.backend-skills{
+  .background-image("/images/titan.jpg");
+}
+
+@bubble-width: 80px;
+
+.speech-bubble{
+  position: absolute;
+  height: 100px;
+  padding-top: @padding-base-horizontal * 2;
+  width: @bubble-width - 30;
+.transition (background-color);
+  @media(@sm){
+    .bg-transparent(#ffffff, 0.8);
+    &:hover{
+      .bg-transparent(#ffffff, 1);
+    }
+    height: 160px;
+    padding-top: 65px;
+    width: @bubble-width;
   }
-  &#jquery{  
-    width:75%;
-  -webkit-transition: width .3s ease;
-  transition: width .3s ease;
-      -moz-transition: width .3s ease;
-      @media (min-width: @screen-md-min) {
-        &:hover{
-          width:80%;
-        }
-      }
+  .border-radius(50%);
+  .border(#000000, 2px);
+  text-transform: capitalize;
+  background-color: #ffffff;
+  &.css{
+    left: 30%;
+    top: 10%;
   }
-  &#angularJs{
-  width:70%;
-  -webkit-transition: width .3s ease;
-  transition: width .3s ease;
-      -moz-transition: width .3s ease;
-      @media (min-width: @screen-md-min) {
-        &:hover{
-          width:75%;
-        }
-      }
+  &.less{
+    left: 10%;
+    top: 20%;
+  }
+  &.sass{
+    left: 25%;
+    top: 40%;
+  }
+  &.ruby{
+    left: 43%;
+    top: 38%;
+  }
+  &.javascript{
+    right: 35%;
+    top: 10%;
+  }
+  &.coffee{
+    right: 10%;
+    top: 20%;
+  }
+  &.c-sharp{
+    left: 10%;
+    bottom: 30%;
+  }
+  &.angular{
+    right: 25%;
+    top: 40%;
+    width: @bubble-width + 20px;
+  }
+  &.umbraco{
+    left: 10%;
+    bottom: 5%;
+    width: @bubble-width + 20px;
+  }
+  &.cucumber{
+    right: 10%;
+    bottom: 10%;
+  }
+  &.git{
+    top: 50%;
+    left: 15%;
+  }
+  &.grunt{
+    top: 33%;
+    left: 5%;
+  }
+  &.less, &.css, &.sass {
+    text-transform: uppercase;
+  }
+  &.javascript, &.coffee, &.cucumber {
+    width: @bubble-width + 20;
+  }
+  @media(@sm){
+    &.css{
+      left: 30%;
+      top: 10%;
+    }
+    &.javascript{
+      left: 30%;
+      top: 2%;
+    }
+    &.less{
+      left: 10%;
+      top: 20%;
+    }
+    &.sass{
+      left: 21%;
+    }
+    &.cucumber{
+      right: 20%;
+      bottom: 10%;
+    }
+    &.grunt{
+      left: 10%;
+      bottom: 8%;
+    }
+    &.git{
+      left: 1%;
+      top: 4%;
+    }
+    &.umbraco{
+      left: 22%;
+      bottom: 5%;
+      width: @bubble-width + 20px;
+    }
+    &.coffee{
+      right: 3%;
+      top: 10%;
+    }
+    &.angular{
+      right: 22%;
+      top: 38%;
+      width: @bubble-width + 20px;
+    }
   }
 }
+
+.color-layer{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255,255,255,0.4);
+  &.style{
+    .bg-transparent(@blue-accent, 0.5);
+    .speech-bubble{
+    }
+  }
+  &.javascript{
+    .bg-transparent(@hot-pink, 0.5);
+  }
+  &.production{
+    .bg-transparent(@yellow, 0.5);
+  }  
+  &.integration{
+    .bg-transparent(@red-accent, 0.5);
+  }
+}
+
+// .bar{
+//   text-align: left;
+//   height:60px;
+//   background:rgba(90, 90, 90, 0.5);
+//   vertical-align: center;
+//   padding:0.6%;
+//   margin-top: @padding-base-vertical*2;
+//   color:#ffffff;
+//   padding-top: 7px;
+//   .transition(@transition, @time, @style);
+//   &:last-child{
+//     margin-bottom: @padding-base-vertical+10;
+//   }
+// }
+
+// .inner{
+//   line-height: 45px;
+//   height:45px;
+//   background-color:#000000;
+//   display:inline-block;
+//   font-size: 1.5em;
+//   padding-left: @padding-base-horizontal;
+//   color:white;
+//   -webkit-transition: color .3s ease;
+//   -moz-transition: color .3s ease;
+//   transition: color .3s ease;
+//   &#html{
+//     width:86%;
+//     -webkit-transition: width .3s ease;
+//     -moz-transition: width .3s ease;
+//     transition: width .3s ease;
+//     @media (min-width: @screen-md-min) {
+//       &:hover{
+//         width:91%;
+//       }
+//     }
+//   }
+//   &#css{  
+//     width:85%;
+//     -webkit-transition: width .3s ease;
+//     transition: width .3s ease;
+//       -moz-transition: width .3s ease;
+//       @media (min-width: @screen-md-min) {
+//         &:hover{
+//           width:90%;
+//         }
+//       }
+//   }
+//   &#ror{
+//     width:55%;
+//   -webkit-transition: width .3s ease;
+//   transition: width .3s ease;
+//       -moz-transition: width .3s ease;
+//       @media (min-width: @screen-md-min) {
+//         &:hover{
+//           width:60%;
+//         }
+//       }
+//   }
+//   &#javaScript{
+//     width:60%;
+//   -webkit-transition: width .3s ease;
+//   transition: width .3s ease;
+//       -moz-transition: width .3s ease;
+//       @media (min-width: @screen-md-min) {
+//         &:hover{
+//           width:65%;
+//         }
+//       }
+//   }
+//   &#jquery{  
+//     width:75%;
+//   -webkit-transition: width .3s ease;
+//   transition: width .3s ease;
+//       -moz-transition: width .3s ease;
+//       @media (min-width: @screen-md-min) {
+//         &:hover{
+//           width:80%;
+//         }
+//       }
+//   }
+//   &#angularJs{
+//   width:70%;
+//   -webkit-transition: width .3s ease;
+//   transition: width .3s ease;
+//       -moz-transition: width .3s ease;
+//       @media (min-width: @screen-md-min) {
+//         &:hover{
+//           width:75%;
+//         }
+//       }
+//   }
+// }
